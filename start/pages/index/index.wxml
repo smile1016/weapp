@@ -1,13 +1,58 @@
 <!--index.wxml-->
+<import src="/pages/templates/user.wxml" />
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<!-- {{motto}} -->
+	<!-- bindtap绑定事件,事件写在js里 -->
+	<!-- <button bindtap="changemsg">change</button> -->
+
+	<!-- 列表渲染 -->
+	<!-- <view wx:for='{{datalist}}' wx:for-index="idx" wx:for-item='obj' wx:key='idx'>{{obj}}-{{idx}}</view>
+
+	<template is='userTpl' data="{{username:'xiaoxiao',age:12}}"></template>
+	<include src='/pages/templates/header.wxml' data='gp16' />
+	<view id="tapName" data-hi="wechat" bindtap="tapName">click me</view> -->
+	<!-- 冒泡 -->
+	<!-- <view catchtap="hanldeTap1">
+		outer
+		<view catchtap="hanldeTap2">
+			middle
+			<view catchtap="hanldeTap3">
+				inner
+			</view>
+		</view>
+	</view> -->
+	<!-- 阻止事件冒泡使用catchtap -->
+	<!-- <view bindtap="hanldeTap1">
+		outer
+		<view bindtap="hanldeTap2">
+			middle
+			<view bindtap="hanldeTap3">
+				inner
+			</view>
+		</view>
+	</view> -->
+
+	<!-- <view class="count-container">
+		<button data-num="2" bindtap="decrement">-</button>
+		<view>
+			{{count}}
+		</view>
+		<button data-num="3" bindtap="increment">+</button>
+	</view> -->
+	<!-- open-type='reditect' 相当于replace -->
+	<navigator url="/pages/todolist/todolist">todolist</navigator>
+	<navigator url="/pages/lifecircle/lifecircle" open-type="redirect">lifecircle</navigator>
+	
+	<button bindtap="gotodolist">todolist</button>
+	<button bindtap="golog">tolog</button>
+
+<!-- 程序重新启动 -->
+	<navigator url="/pages/lifecircle/lifecircle" open-type="reLaunch">reload</navigator>
 </view>
+
+
+
+
+
+
+

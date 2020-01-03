@@ -1,0 +1,6 @@
+<template name='userTpl'>
+  <view>
+    username:{{username}}
+    age:{{age}}
+  </view>
+</template>

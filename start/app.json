@@ -1,13 +1,34 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/todolist/todolist",
+    "pages/logs/logs",
+    "pages/lifecircle/lifecircle"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
+  "tabBar": {
+    "selectedColor": "#e12345",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"/images/cookbook.png",
+        "selectedIconPath":"/images/cookbook.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath":"/images/search.png",
+        "selectedIconPath":"/images/search.png"
+      }
+    ]
+  },
+  "style":"v2",
   "sitemapLocation": "sitemap.json"
 }

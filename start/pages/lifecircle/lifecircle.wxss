@@ -1,0 +1,5 @@
+/* pages/lifecircle/lifecircle.wxss */
+.container{
+  height: 2000px;
+  background:pink
+}

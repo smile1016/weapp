@@ -1,0 +1,15 @@
+<!--pages/todolist/todolist.wxml-->
+<!-- <text>pages/todolist/todolist.wxml</text> -->
+<view class="container">
+	<view class="form-wrapper">
+		<input bindinput="changeTxt" placeholder="please input item"></input>
+		<button bindtap="add">添加</button>
+	</view>
+
+	<view class="listitems" >
+		<view wx:for='{{datalist}}' wx:key='unique' class="item">
+			<view >{{item.name}}</view>
+			<view bindtap="del" data-id="{{item.id}}">删除</view>
+		</view>
+	</view>
+</view>

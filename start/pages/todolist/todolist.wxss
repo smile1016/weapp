@@ -1,0 +1,19 @@
+/* pages/todolist/todolist.wxss */
+.container{
+  padding:0
+}
+.form-wrapper{
+  display:flex;
+  width: 100%;
+  align-items: center;
+}
+.count-container{
+  display:flex
+}
+.listitems{
+  width:100%;
+}
+.item{
+  display:flex;
+  align-items: center;
+}

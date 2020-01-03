@@ -1,54 +1,61 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const {formatTime} = require('../../utils/util')
+const http = require('../../utils/http')
 Page({
   data: {
+    count:1,
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    datalist:[1,2,3,4,5]
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  onReady(){
+    // console.log(formatTime(new Date()))
+    // console.log(http.msg)
+    // console.log(http)
+    console.log(wx.env)
+  },
+  changemsg(){
+    this.setData({
+      motto:'hi hi'
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+  tapName(arg){
+    console.log(arg)
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  hanldeTap1(){
+    console.log('hanldeTap1')
+  },
+  hanldeTap2(){
+    console.log('hanldeTap2')
+  },
+  hanldeTap3(){
+    console.log('hanldeTap3')
+  },
+  decrement(event){
+    console.log(event)
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      count:this.data.count-parseInt(event.currentTarget.dataset.num)
+    })
+  },
+  increment(event){
+    this.setData({
+      count:this.data.count+parseInt(event.currentTarget.dataset.num)
+    })
+  },
+  gotodolist(){
+    // wx.navigateTo({
+    //   url: '/pages/todolist/todolist',
+    // })
+    wx.redirectTo({
+      url: '/pages/todolist/todolist',
+    })
+  },
+  golog(){
+    wx.switchTab({
+      url: '/pages/logs/logs',
     })
   }
 })
