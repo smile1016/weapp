@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="map">
+		<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" show-location>
+			<cover-view class="tocenter" bindtap="movetocenter">
+				<cover-image src='/resources/center.png'>
+				</cover-image>
+			</cover-view>
+		</map>
+	</view>
+
+
+	<view class='tabbar'>
+		<view class="publish" bindtap="goPublish">发布</view>
+		<view class="search" bindtap="goSearch">搜索</view>
+	</view>
+</view>

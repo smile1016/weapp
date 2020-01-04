@@ -1,0 +1,24 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+	<view class="searchForm">
+		<input bindinput="inputChange"></input>
+		<text bindtap="handleSearch">搜索</text>
+	</view>
+
+<!-- 历史记录 -->
+  <view class="history" wx:if="{{showhistory}}">
+    <view wx:for="{{historyList}}" wx:key="unique" data-keyword="{{item}}" bindtap="searchByhistory">
+      {{item}}
+    </view>
+  </view>
+  <view class="listConatienr"  wx:if="{{!showhistory}}">
+    <view wx:for="{{datalist}}" data-id="{{item.id}}" bindtap="goDetail" wx:key="unique" class="item">
+      <view class="title">
+      {{item.address}}({{item.type=='sell'?'求购':'转让'}})
+      </view>
+      <view class="desc">
+        {{item.message}}
+      </view>
+    </view>
+  </view>
+</view>

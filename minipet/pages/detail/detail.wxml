@@ -1,0 +1,15 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+
+<view>
+{{address}}
+</view>
+<view>
+{{type==='sell'?'购买':'转让'}}
+</view>
+<view>
+{{message}}
+</view>
+<view>
+{{concat}}
+</view>

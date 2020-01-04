@@ -1,0 +1,50 @@
+/* pages/search/search.wxss */
+.container{
+  background-color: #dfdfdf;
+}
+.searchForm{
+  background-color: #03bbd5;
+  padding: 10rpx;
+  display:flex
+}
+.searchForm input{
+  background-color: #fff;
+  height: 65rpx;
+  border-radius: 10rpx;
+  flex:1;
+}
+.searchForm text{
+  width: 120rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 38rpx;
+}
+
+.listConatienr{
+  
+}
+.item{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+.item text{
+  line-height: 40rpx;
+}
+
+.item .title{
+  color: #c6a764;
+}
+
+.desc{
+
+}
+
+.history{
+  background-color: white;
+  display: flex;
+  padding: 15rpx;
+}
+.history view{
+  margin:8rpx
+}
