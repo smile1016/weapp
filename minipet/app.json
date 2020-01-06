@@ -3,7 +3,8 @@
     "pages/search/search",
     "pages/index/index",
     "pages/publish/publish",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "components/user/user"
   ],
   "permission": {
     "scope.userLocation": {
